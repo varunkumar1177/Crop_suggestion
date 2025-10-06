@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop suggestion</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+    <h1 class="box1">User Feedback</h1>
+<div class="box box1">
+
+  <!-- Feedback Form -->
+   <div class="section-1">
+  <input type="text" id="name" placeholder="Your Name">
+  <select id="rating">
+    <option value="">-- Select Rating --</option>
+    <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+    <option value="4">⭐⭐⭐⭐ Good</option>
+    <option value="3">⭐⭐⭐ Average</option>
+    <option value="2">⭐⭐ Poor</option>
+    <option value="1">⭐ Very Poor</option>
+  </select>
+  <textarea id="comment" rows="3" placeholder="Write your feedback here..."></textarea>
+  <button onclick="submitFeedback()">Submit Feedback</button>
+  <button onclick="history.back()" class="btn1">Go Back</button>
+    </div>
+
+  <!-- Feedback Display -->
+   <div class="section-2">
+  <div id="feedbackList" class="feedback-list" ></div>
+</div>
+</div>
+<script>
+  // Pre-existing comments
+  let feedbacks = [
+    {name: "Priyadharshini", rating: 5, comment: "This yield predictor is amazing! Very helpful."},
+    {name: "Thanesh", rating: 4, comment: "Easy to use and accurate for my farm."},
+    {name: "Mukesh", rating: 3, comment: "Good tool, but I wish it had more crops."}
+  ];
+
+  // Function to display feedbacks
+  function displayFeedback() {
+    const list = document.getElementById('feedbackList');
+    list.innerHTML = ""; // Clear existing
+    feedbacks.slice().reverse().forEach(fb => { // show newest first
+      const div = document.createElement('div');
+      div.className = "feedback-item";
+      div.innerHTML = `
+        <h4>${fb.name}</h4>
+        <div class="rating">${'⭐'.repeat(fb.rating)}</div>
+        <p>${fb.comment}</p>
+      `;
+      list.appendChild(div);
+    });
+  }
+
+  // Function to submit new feedback
+  function submitFeedback() {
+    const name = document.getElementById('name').value.trim();
+    const rating = document.getElementById('rating').value;
+    const comment = document.getElementById('comment').value.trim();
+
+    if (!name || !rating || !comment) {
+      alert("⚠️ Please fill all fields!");
+      return;
+    }
+
+    // Add new feedback to array
+    feedbacks.push({name, rating: parseInt(rating), comment});
+
+    // Refresh display
+    displayFeedback();
+
+    // Clear inputs
+    document.getElementById('name').value = "";
+    document.getElementById('rating').value = "";
+    document.getElementById('comment').value = "";
+  }
+
+  // Initial display
+  displayFeedback();
+</script>
+
+</body>
+<hr>
+<footer>
+    <p>Devloped by <b>Team TECH FEAST TF38</b> | &copy; All Right Reserved 2025</p>
+</footer>
+</html>

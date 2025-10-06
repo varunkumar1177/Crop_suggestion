@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop suggestion</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body >
+
+   
+       <h1 class="box1">Get Instant Crop Suggestion</h1>
+    
+
+    <div class="box box1">
+
+        <div class="section-1">
+            <div class="box1">
+            <form id="crop-form">
+
+               <label for="soil" class="text">Select your soil type : </label>
+                <select id="soil">
+                    <option value="clay">Clay</option>
+                    <option value="sandy">Sandy</option>
+                    <option value="Loamy">Loamy</option>
+                </select>
+                <br>
+
+                <label for="season" class="text">Select the Season : </label>
+                <select id="season">
+                    <option value="summer">Summer</option>
+                    <option value="winter">Winter</option>
+                    <option value="monsoon">monsoon</option>
+                </select>
+                <br>
+
+                <div class="button-container">
+                    <button type="button" class="btn2" onclick="cropsuggestion()">Get Crop Suggestion</button>
+                    <button type="reset" class="btn3" onclick="resetbutton()">reset</button>
+                    <button onclick="history.back()" class="btn1">go back</button>
+                </div>
+                </form>
+            </div>
+            </div>
+            <div class="vertical-line"></div>
+
+        <div class="section-2">
+        <div id="crop" class="weather-box"></div>
+        </div>
+    </div>
+
+    </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+<hr>
+<footer>
+    <p>Devloped by <b>Team TECH FEAST TF38</b> | &copy; All Right Reserved 2025</p>
+</footer>
+</html>

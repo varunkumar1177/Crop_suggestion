@@ -1,0 +1,661 @@
+
+
+body{
+  margin: 0;
+  background-image: url(images/background3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.logo{
+  width: auto;
+  height: 90px;
+  margin-right: auto;
+  margin-left: 20px;
+  
+}
+#contactus ul{
+  list-style: none;
+  padding: 0;
+}
+#contactus li{
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: black;
+  text-shadow: rgb(97, 95, 95) 0.1em 0.1em 0.2em;
+}
+#contactus a{
+  color: black;
+  text-decoration: none;
+  text-shadow: rgb(97, 95, 95) 0.1em 0.1em 0.2em;
+}
+#contactus a:hover{
+  text-decoration: underline;
+  color: rgb(46, 45, 45);
+}
+#comment{
+    resize: vertical;
+    min-height: 80px;
+    width: 100%;
+    padding:10px;
+    border: 2px solid black;
+    display: block;
+    border-radius: 5px;
+
+}
+.feedback-item h4 {
+    margin: 0;
+    color: #2e7d32;
+  }
+
+  .rating {
+    color: #fdd835;
+    font-size: 18px;
+  }
+  .hamburger{
+  display: none;
+  }
+nav{
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-image: url(images/background1.jpg);
+  animation: slideInRight 2.5s ease-out;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+}
+nav ul{
+  display: flex;
+  width: 100%;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  margin: 0;
+}
+nav li{
+  height: 50px;
+}
+nav a{
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  font-family: "epunda slab", serif;
+}
+nav a:hover{
+  background-color: #627400;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-image: url(images/background1.jpg);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.sidebar li{
+  width: 100%;
+}
+.sidebar a{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  font-family: "epunda slab", serif;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+label{
+  font-size: 1.4em;
+  font-family: "epunda slab", serif;
+  font-weight: 600;
+}
+
+li{
+  font-size: 1.5em;
+  font-family: "patrick Hand",cursive;
+  margin-top: 5px;
+  text-align: justify;
+
+
+}
+
+h3{
+  text-align: left;
+  font-size: 1.6em;
+}
+
+.feature{
+  margin-top: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+.feature:hover{
+  color: rgb(46, 45, 45);
+  text-decoration: underline;
+}
+
+.box1{
+      background-image: url(images/background1.jpg);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: auto;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      animation: slideInRight 2.5s ease-out;
+      box-shadow: 0 4px 12px rgb(1, 1, 82);
+      
+}
+
+.features{
+  display: flex;
+  justify-content: center;
+  gap:20px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 50px;
+}
+.form-box{
+  padding: 20px;
+  border-radius: 12px;
+  
+  text-align: left;
+  width: 70%;
+}
+.robot{
+  width: 350px;
+  height: auto;
+  animation:  wiggle 2s infinite;
+
+}
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.box3 img{
+    width: 300px;
+    height: auto;
+    animation:  wiggle 2s infinite;
+}
+.header{
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+.head{
+    font-size: 4em;
+    margin: 0;
+    color: #212121;
+    font-family: "Epunda Slab", serif;
+    text-transform:capitalize;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.container{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border-color: none;
+    flex-wrap: wrap;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 50px;
+  gap: 40px;
+}
+.section-2 p{
+  font-size: 1.5em;
+  font-family: "Merriweather", serif;
+  font-weight: 200;
+}
+.section-1, .section-2{
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btn-group{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.weather-box{
+  padding: 20px;
+  text-align: left;
+  width: 300px;
+}
+
+.font p{
+   
+  font-family: "";
+  font-weight: 400;
+  font-size: 1.5em;
+  font-style: normal;
+  text-shadow: 2px 2px 4px rgba(54, 53, 53, 0.267);
+}
+.font h3{
+  font-family: "Epunda Slab", serif;
+  font-size: 2em;
+}
+
+.container h2{
+  font-family: "rancho",cursive;
+  font-size: 2.5em;
+  text-decoration: capitalize;
+}
+p{
+    font-family: "Epunda Sans", sans-serif;
+    font-size: 1em;
+}
+.text{
+     font-family: "Epunda Slab", serif;
+    font-size: 1.6em;
+    color: black;
+    
+}
+option{
+    font-family: "Merriweather", serif;
+    font-size: 1.4em;
+    background: linear-gradient(to right, #2538a1, #3fe4e1);
+    color: black;
+}
+
+input, select{
+    width: 100%;
+    padding:10px;
+    border: 2px solid black;
+    display: block;
+    border-radius: 5px;
+    font-family: "Merriweather", serif;
+    background-color: white;
+
+    font-size: 1.4em;
+    animation: shine 2s infinite;
+}
+.box1 h1{
+    font-family: "Epunda Slab", serif;
+    font-size: 3em ;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(151, 121, 121, 0.5);
+}
+.box1 h3{
+  font-family: "Epunda Slab", serif;
+}
+button{
+    color: white;
+    background: linear-gradient(#0804d6, #4955fd, #100292);
+    border: none;
+    display: flex;
+    margin: 10px auto;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-family: "epunda slab", serif;
+    gap:10px;
+    cursor: pointer;
+    align-items: center;
+
+
+}
+
+button:hover{
+    background: linear-gradient(#030155, #4955fd, #0c016e);
+    animation: bounce 0.3s ease;
+}
+
+button:active{
+    transform: scale(0.95);
+    background : linear-gradient(rgb(40, 42, 138),rgb(90, 100, 141),rgb(1, 12, 61));
+}
+
+footer{
+    text-align: center;
+    padding: 10px;
+    color: rgb(247, 255, 246);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    bottom: 0;
+    margin-bottom: 0px;
+}
+/*displaying crop suggestions*/
+.crop-suggestions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.crop-card {
+  
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-left: 6px solid #011238;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.crop-card:hover {
+  transform: scale(1.05);
+}
+.crop-card p{
+   font-family: "Epunda Slab", serif;
+  color: black;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 30px;
+
+}
+.crop-card h4 {
+  margin-bottom: 8px;
+  color: #011238;
+  font-family: "Epunda Slab", serif;
+  font-size: 1.9em;
+  color: rgb(1, 10, 95);
+}
+/*Tips section*/
+.tips-section {
+  margin-top: 20px;
+  width: auto;
+  padding: 15px;
+  border-left: 6px solid #011238;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.tips-section h3 {
+  margin-bottom: 10px;
+  color: black;
+  text-decoration: underline;
+  font-family: "Epunda Slab", serif;
+  font-size: 1.9em;
+}
+
+.tips-section ul li{
+  padding-left: 20px;
+  line-height: 1.6;
+  text-align: left;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+
+}
+.button {
+    flex-direction: column;
+    text-align: justify;
+    color: white;
+  }
+  a{
+    text-decoration: none;
+  }
+  
+  
+  .box1 h2{
+    font-size: 2.5em;
+     font-family: "Epunda Slab", serif;
+  }
+  .box1 li{
+    font-family: "Epunda Sans", sans-serif;
+    font-size: 1.5em;
+
+  }
+  #chartContainer {
+            max-width: 700px;
+            max-height: 700px;
+            margin: 0 auto;
+        }
+       .yield-bar {
+      height: 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+      width: 100%;
+      background: #ccc;
+      overflow: hidden;
+    }
+
+    .yield-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.6s ease, background-color 0.6s ease;
+    }
+
+    .yield-level {
+      text-align: center;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px #e9fa01; }
+  50% { box-shadow: 0 0 20px #a39801; }
+  100% { box-shadow: 0 0 5px #6e7001; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); /* start outside right */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0); /* end in normal place */
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+
+
+
+.head{
+  font-size: 2.5em;
+}
+  .container h1 {
+    font-size: 2.2rem;
+  }
+
+  .container h2{
+    font-size: 1.7rem;
+  }
+  .container h3{
+    font-size: 1.6rem;
+  }
+  .font p{
+    font-size: 1.4rem;
+  }
+  .font h3{
+    font-size: 1.5rem;
+  }
+  .font h4{
+    font-size: 1.4rem;
+  }
+  .font li{
+    font-size: 1.2rem;
+  }
+  .text{
+    font-size: 1.4rem;
+  }
+  .robot{
+    width: auto;
+    height: 200px;
+  }
+  input, select{
+    font-size: 1.2rem;
+    width: 90%;
+    height: auto;
+  }
+  button{
+    font-size: 1rem;
+
+  }
+  p{
+    font-size: 0.9rem;
+  }
+  .box1 h1{
+    font-size: 2em ;
+    text-align: center;
+  }
+  .container{
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+  }
+  .features{
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .form-box{
+    width: 100%;
+    padding: 10px;
+  }
+  .form-container{
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+  }
+  .box3 img{
+    width: 100px;
+    margin: 0px;
+    padding: 0%;
+
+  }
+  .box1 p{
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .box1{
+    
+    padding: 20px;
+    width: 90%;
+    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .box1 li{
+    font-size: 1.2em;
+    text-align: justify;
+  }
+  .btn-group a{
+    font-size: 1em;
+  }
+  nav{
+    width: auto;
+    margin: 0;
+  }
+  option{
+    font-size: 1.2em;
+  }
+  .box1 h2{
+    font-size: 2em;
+  }
+  .box1 h3{
+    font-size: 1.5em;
+  }
+  .crop-card {
+    width: 150px;
+    padding: 10px;
+  }
+  .crop-card h4 {
+    font-size: 1.5em;
+  }
+  .crop-card p{
+    font-size: 1em;
+    line-height: 20px;
+  }
+  .tips-section h3 {
+    font-size: 1.5em;
+  }
+  .tips-section ul li{
+    font-size: 1em;
+    line-height: 1.4;
+  }
+  .box{
+  display: block;
+}
+.weather-box{
+  text-align: left;
+  margin: 0 auto;
+}
+.hideonmobile{
+  display: none;
+}
+.hamburger{
+  display: block;
+  margin-left: auto;
+
+}
+}
