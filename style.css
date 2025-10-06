@@ -64,7 +64,7 @@ html{
   }
 nav{
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  background-image: url(images/background1.jpg);
+  background-image: url(background1.jpg);
   animation: slideInRight 2.5s ease-out;
   align-items: center;
   display: flex;
@@ -660,3 +660,4 @@ footer{
 }
 
 }
+
