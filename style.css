@@ -2,7 +2,7 @@
 
 body{
   margin: 0;
-  background-image: url(images/background3.jpg);
+  background-image: url(background3.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -161,7 +161,7 @@ h3{
 }
 
 .box1{
-      background-image: url(images/background1.jpg);
+      background-image: url(background1.jpg);
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -658,4 +658,5 @@ footer{
   margin-left: auto;
 
 }
+
 }
