@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌾 Live Mandi Rate Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <img src="logo.png" alt="Logo" class="logo">
+    <ul class="hideonmobile">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="weather.html">Weather</a></li>
+      <li><a href="crop.html">Crop Suggestion</a></li>
+      <li><a href="mandi.html">Mandi Rates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger">
+      <a href="javascript:void(0)" onclick="toggleSidebar()">☰</a>
+    </div>
+  </nav>
+
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="weather.html">Weather</a></li>
+      <li><a href="crop.html">Crop Suggestion</a></li>
+      <li><a href="mandi.html">Mandi Rates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Section -->
+  <div class="box1">
+    <h1>🌾 Live Mandi Rate Finder</h1>
+    <p class="text">Get today’s agricultural market prices directly from official Government data (data.gov.in)</p>
+
+    <div class="box">
+      <div class="section-1">
+        <label for="state">Select State:</label>
+        <select id="state">
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+        </select>
+
+        <label for="commodity">Search Commodity (optional):</label>
+        <input type="text" id="commodity" placeholder="e.g. Rice, Tomato, Wheat">
+
+        <button onclick="getMandiRates()">Get Live Rates</button>
+      </div>
+    </div>
+
+    <div id="output" class="container"></div>
+  </div>
+
+  <footer>
+    <p>🌿 Powered by <b>data.gov.in</b> | Designed by Dharcini 🌾</p>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.display = (sidebar.style.display === "flex") ? "none" : "flex";
+    }
+
+    async function getMandiRates() {
+      const state = document.getElementById("state").value;
+      const commodity = document.getElementById("commodity").value.trim();
+      const output = document.getElementById("output");
+
+      output.innerHTML = "<p class='text'>Fetching latest mandi rates...</p>";
+
+      const apiKey = "YOUR_API_KEY"; // 🔑 Replace with your valid key
+
+      let url = `https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${apiKey}&format=json&filters[state]=${encodeURIComponent(state)}&limit=20`;
+      if (commodity) {
+        url += `&filters[commodity]=${encodeURIComponent(commodity)}`;
+      }
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (!data.records || data.records.length === 0) {
+          output.innerHTML = "<p class='text'>No records found for today. Try another commodity or state.</p>";
+          return;
+        }
+
+        let table = `
+          <div class="container" style="overflow-x:auto;">
+            <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse; text-align:left; background-color:rgba(255,255,255,0.9);">
+              <tr style="background:linear-gradient(to right, #2538a1, #3fe4e1); color:white;">
+                <th>Commodity</th>
+                <th>Market</th>
+                <th>District</th>
+                <th>Min Price (₹)</th>
+                <th>Max Price (₹)</th>
+                <th>Modal Price (₹)</th>
+                <th>Date</th>
+              </tr>
+        `;
+
+        data.records.forEach(item => {
+          table += `
+            <tr style="background-color:white; color:black;">
+              <td>${item.commodity || '-'}</td>
+              <td>${item.market || '-'}</td>
+              <td>${item.district || '-'}</td>
+              <td>${item.min_price || '-'}</td>
+              <td>${item.max_price || '-'}</td>
+              <td>${item.modal_price || '-'}</td>
+              <td>${item.arrival_date || '-'}</td>
+            </tr>
+          `;
+        });
+
+        table += "</table></div>";
+        output.innerHTML = table;
+
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        output.innerHTML = "<p class='text'>⚠ Unable to fetch data. Please try again later.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
